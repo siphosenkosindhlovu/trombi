@@ -36,6 +36,6 @@ export function buildCard(person) {
   const CardWrapper = createElement('div', { class: 'card_wrapper m-auto m-lg-0 col-12' }, [
     Card
   ])
-  const Container = createElement('div', { 'data-key': person.id, class: classes.default.join(' ') }, [CardWrapper])
+  const Container = createElement('div', { 'data-key': person.index, class: classes.default.join(' ') }, [CardWrapper])
   return Container
 }
