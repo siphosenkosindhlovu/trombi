@@ -1,0 +1,167 @@
+$primary-color: hsl(200, 100%, 50%);
+$secondary-color: hsl(210, 71%, 40%);
+@mixin box-shadow() {
+  box-shadow: 0 3px 31px rgba(0, 0, 0, 0.16);
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.extra-pad {
+  padding: 45px;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+.text-secondary {
+  color: $secondary-color !important;
+}
+.font-regular {
+  font-weight: regular;
+}
+.font-light {
+  font-weight: 300;
+}
+// .h1 {
+//   font-size: 2em;
+// }
+// .h2 {
+//   font-size: 1.5em;
+// }
+// .h3 {
+//   font-size: 1.17em;
+// }
+// .h4 {
+//   font-size: 1em;
+// }
+// .h5 {
+//   font-size: 0.83em;
+// }
+// .h6 {
+//   font-size: 0.67em;
+// }
+// .margin-0 {
+//   margin: 0;
+// }
+
+.header {
+  &_logo {
+    margin: 50px auto;
+  }
+  &_search {
+    margin: auto;
+    margin-bottom: 30px;
+    input {
+      width: 60%;
+      min-width: 360px;
+      max-width: 1100px;
+      display: block;
+      margin: auto;
+      border: none;
+      padding: 15px;
+      text-align: center;
+      font-size: 28px;
+      color: #242424;
+      font-weight: 300;
+      @include box-shadow();
+    }
+  }
+}
+
+.pill {
+  font-size: 13px;
+  border: 1px solid $primary-color;
+  background-color: $primary-color;
+  color: white;
+  padding: 5px 20px;
+  margin: 15px;
+  border-radius: 40px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  &_item {
+    @extend .pill;
+    color: $primary-color;
+    background-color: white;
+    &.active {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+.card {
+  @include box-shadow();
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  height: 100%;
+  &_pill {
+    @extend .pill;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+  &_img {
+    width: 100%;
+    height: auto;
+  }
+  &_wrapper {
+    padding: 15px;
+  }
+
+  &_body {
+    padding: 25px;
+  }
+  &_title {
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+  &_expand-button {
+    margin: 15px auto;
+    background-color: $secondary-color;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.grid {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
+}
+
+@media (min-width: 575px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.arrow-list {
+  list-style-type: "\2192";
+  padding-left: 1em;
+  li {
+    padding-left: 0.25em;
+  }
+}
