@@ -11,7 +11,7 @@ import { createElement } from './utilities'
 export function buildCard(person) {
   const expandButton = createElement('button', { class: 'card_expand-button mt-auto' }, ['+'])
   expandButton.addEventListener('click', function (e) {
-    console.log('clicked ', person.index)
+    console.log('clicked ', person)
   })
   const p = createElement('p', null, [...person.tags])
   const H3 = createElement('h3', { class: 'text-primary font-light' }, [person.company])

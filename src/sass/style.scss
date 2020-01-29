@@ -1,3 +1,5 @@
+$grid-gutter-width: 5px;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 $primary-color: hsl(200, 100%, 50%);
 $secondary-color: hsl(210, 71%, 40%);
 @mixin box-shadow() {
@@ -110,19 +112,19 @@ button {
   &_pill {
     @extend .pill;
     position: absolute;
-    right: 8px;
-    top: 8px;
+    right: 0px;
+    top: 0px;
   }
   &_img {
     width: 100%;
     height: auto;
   }
   &_wrapper {
-    padding: 15px;
+    padding: 5px;
   }
 
   &_body {
-    padding: 25px;
+    padding: 10px;
   }
   &_title {
     margin-bottom: 15px;

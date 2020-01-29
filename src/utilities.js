@@ -24,3 +24,7 @@ export function createElement(tag, attributes, children) {
   }
   return element
 }
+
+// export function expandCard(person){
+//   document.querySelector('[data-key=]')
+// }
