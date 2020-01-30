@@ -1,6 +1,6 @@
 import { createElement } from './utilities'
-export default function CardSidePane (props) {
-  return createElement('div', { class: 'card_wrapper m-auto m-lg-0 card_side-pane col-12 col-sm-8' }, [
+export function CardSidePane(props) {
+  return createElement('div', { class: 'card_wrapper m-auto m-lg-0 card_side-pane col-12 col-sm-6 col-lg-9' }, [
     createElement('div', { class: 'card' }, [
       createElement('section', { class: 'card_body' }, [
         createElement('h2', { class: 'card_title h1 text-primary font-regular' }, [

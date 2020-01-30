@@ -120,7 +120,11 @@ button {
     height: auto;
   }
   &_wrapper {
-    padding: 30px 0;
+    padding: {
+      top: 30px;
+      bottom: 30px;
+    }
+    transform-origin: top left;
   }
 
   &_body {
@@ -149,6 +153,11 @@ button {
     height: 35px;
     display: block;
     cursor: pointer;
+    transition: all 0.3s;
+    &--close {
+      background-color: #940000 !important;
+      transform: rotate(45deg);
+    }
   }
 }
 

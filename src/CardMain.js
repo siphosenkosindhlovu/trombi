@@ -1,5 +1,5 @@
 import { classes } from './classes'
-import { createElement } from './utilities'
+import { createElement, expandCard } from './utilities'
 /**
  *
  * A funcition that builds the non expanded card
@@ -11,7 +11,8 @@ import { createElement } from './utilities'
 export function buildCard(person) {
   const expandButton = createElement('button', { class: 'card_expand-button mt-auto' }, ['+'])
   expandButton.addEventListener('click', function (e) {
-    console.log('clicked ', person)
+    $(e.target).toggleClass('card_expand-button--close')
+    expandCard(person)
   })
   const p = createElement('p', null, [...person.tags])
   const H3 = createElement('h3', { class: 'text-primary font-light' }, [person.company])
@@ -33,9 +34,10 @@ export function buildCard(person) {
     CardBody,
     expandButton
   ])
-  const CardWrapper = createElement('div', { class: 'card_wrapper m-auto m-lg-0 col-12' }, [
-    Card
-  ])
-  const Container = createElement('div', { 'data-key': person.index, class: classes.default.join(' ') }, [CardWrapper])
+
+  const Container = createElement('div', {
+    'data-key': person.index,
+    class: classes.default.join(' ')
+  }, [Card])
   return Container
 }

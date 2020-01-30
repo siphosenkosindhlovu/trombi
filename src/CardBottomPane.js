@@ -1,5 +1,5 @@
 import { createElement } from './utilities'
-export default function CardBottomPane(props) {
+export function CardBottomPane(props) {
   function Missions(mission) {
     return createElement('div', { class: 'col-12 col-lg-4 my-3' }, [
       createElement('h3', { class: 'h2 text-secondary font-light' }, [
@@ -15,7 +15,7 @@ export default function CardBottomPane(props) {
       ])
     ])
   }
-  return createElement('div', { class: 'card_wrapper m-auto m-lg-0 card_bottom-pane col-12 col-sm-8 col-lg-12' }, [
+  return createElement('div', { class: 'card_wrapper m-auto m-lg-0 card_bottom-pane col-12' }, [
     createElement('div', { class: 'card' }, [
       createElement('div', { class: 'card_body' }, [
         createElement('h2', { class: 'card_title h1 text-primary font-regular' }, [
