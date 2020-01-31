@@ -58,7 +58,7 @@ searchInput.addEventListener('keyup', function (e) {
 })
 
 function resetContainer(container) {
-  container.innerHTML = ''
+  $(container).empty()
 }
 
 /**
