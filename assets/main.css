@@ -7162,9 +7162,6 @@ button {
 .font-light {
   font-weight: 300; }
 
-body {
-  file: "dd"; }
-
 .header_logo {
   margin: 50px auto; }
 
@@ -7190,8 +7187,8 @@ body {
   border: 1px solid #00aaff;
   background-color: #00aaff;
   color: white;
-  padding: 5px 20px;
-  margin: 15px;
+  padding: 5px 15px;
+  margin: 8px;
   border-radius: 40px; }
 
 .nav {

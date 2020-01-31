@@ -32,9 +32,6 @@ button {
 .font-light {
   font-weight: 300;
 }
-body {
-  file: "dd";
-}
 .header {
   &_logo {
     margin: 50px auto;
@@ -64,8 +61,8 @@ body {
   border: 1px solid $primary-color;
   background-color: $primary-color;
   color: white;
-  padding: 5px 20px;
-  margin: 15px;
+  padding: 5px 15px;
+  margin: 8px;
   border-radius: 40px;
 }
 
