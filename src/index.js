@@ -3,10 +3,11 @@ import Fuse from 'fuse.js'
 import { buildCard } from './CardMain'
 import { createElement } from './utilities'
 import { URL, nav, container, searchForm, searchInput } from './constants'
+import { data } from './data.js'
 
 function getData(url) {
-  return fetch(url).then(res => {
-    return (res.json())
+  return new Promise((resolve, reject) => {
+    resolve(data)
   })
 }
 
@@ -52,9 +53,23 @@ searchForm.addEventListener('submit', function (e) {
 searchInput.addEventListener('keyup', function (e) {
   if (e.target.value === searchQuery) console.log(e.target.value)
   searchQuery = e.target.value
-  getData(URL).then(function (data) {
-    buildElements(search(e.target.value, data))
-  })
+  if (e.target.value.trim() === '') {
+    return getData(URL).then(function (data) {
+      buildElements(data)
+    })
+  } else {
+    getData(URL).then(function (data) {
+      buildElements(search(e.target.value, data))
+    })
+  }
+})
+
+searchInput.addEventListener('blur', function (e) {
+  if (e.target.value.trim() === '') {
+    return getData(URL).then(function (data) {
+      buildElements(data)
+    })
+  }
 })
 
 function resetContainer(container) {

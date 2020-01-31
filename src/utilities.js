@@ -11,6 +11,7 @@ const tl = gsap.timeline({
   }
 })
 export const openObject = {
+  key: null,
   isOpen: false,
   initialProps: {
     x: 0,
@@ -22,7 +23,7 @@ export const openObject = {
   bottomCard: null
 }
 
-export function hideOnClickOutside(selector) {
+export function hideOnClickOutside (selector) {
   const outsideClickListener = (event) => {
     const $target = $(event.target)
     console.log(!$target.closest(selector).length && $(selector).is(':visible'))
@@ -48,7 +49,7 @@ export function hideOnClickOutside(selector) {
  * @param {array} children - an array of child elements
  * @returns {node} children - an array of child elements
  */
-export function createElement(tag, attributes, children) {
+export function createElement (tag, attributes, children) {
   var element = document.createElement(tag)
   if (attributes) {
     var attr = Object.keys(attributes)
@@ -67,11 +68,11 @@ export function createElement(tag, attributes, children) {
   return element
 }
 
-export function collapseCard() {
+export function collapseCard () {
   const { wrapper, mainCard, sideCard, bottomCard } = openObject
   const { x = 0, y = 0 } = openObject.initialProps
-  console.log(bottomCard)
-
+  const { height } = mainCard.getBoundingClientRect()
+  console.log(height)
   wrapper.style.minHeight = 'unset'
   tl.add('end')
     .to(bottomCard, {
@@ -95,16 +96,15 @@ export function collapseCard() {
       onComplete: function () {
         $(wrapper).before(mainCard)
         $(mainCard).css('transform', 'translate(0,0)')
+
         $(wrapper).remove()
         openObject.isOpen = false
-        tl.to(window, {
-          scrollTo: mainCard
-        })
+        openObject.key = null
       }
     })
 }
 
-export function expandCard(person) {
+export function expandCard (person) {
   const element = document.querySelector(`div[data-key='${person.index}']`)
   const card = document.querySelector(`div[data-key='${person.index}'] .card_wrapper:first-child`)
   // console.log(card)
@@ -168,6 +168,7 @@ export function expandCard(person) {
         openObject.sideCard = side
         openObject.bottomCard = bottom
         openObject.isOpen = true
+        openObject.key = person.index
         hideOnClickOutside(div)
       }
     })

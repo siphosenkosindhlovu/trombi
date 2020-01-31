@@ -12,7 +12,8 @@ export function buildCard(person) {
   const expandButton = createElement('button', { class: 'card_expand-button mt-auto' }, ['+'])
   expandButton.addEventListener('click', function (e) {
     $(e.target).toggleClass('card_expand-button--close')
-    if (openObject.isOpen) {
+    if (openObject.key === person.index && openObject.isOpen) {
+      $('.card_expand-button--close').removeClass('card_expand-button--close')
       collapseCard()
     } else {
       expandCard(person)
