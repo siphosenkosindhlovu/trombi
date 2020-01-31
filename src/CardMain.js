@@ -2,10 +2,15 @@ import { classes } from './classes'
 import { createElement, expandCard, collapseCard, openObject } from './utilities'
 /**
  *
+ * @module CardMain
+ */
+
+/**
+ *
  * A funcition that builds the non expanded card
  *
  * @param {object} person - the person object used to build the card
- * @returns {node} - the .card_wrapper element and all itd children
+ * @returns {node} - the .card_wrapper element and all its children
  *
  */
 export function buildCard(person) {

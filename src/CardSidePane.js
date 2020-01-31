@@ -1,4 +1,15 @@
 import { createElement } from './utilities'
+/**
+ *
+ * @module CardSidePane
+ */
+
+/**
+ * A function that builds the .card_side-pane element
+ *
+ * @param {*} props - expects a persons object.
+ * @returns {HTMLDivElement} - .card_side-title element
+ */
 export function CardSidePane(props) {
   return createElement('div', { class: 'card_wrapper m-auto m-lg-0 card_side-pane col-12 col-sm-6 col-lg-9' }, [
     createElement('div', { class: 'card' }, [
