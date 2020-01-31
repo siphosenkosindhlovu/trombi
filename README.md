@@ -1,25 +1,15 @@
-### The Data
-It is stored as a Javascript Object in `./assets/data.js`
-It has the following schema
+This project requires Node JS for local development.
 
-    [
-	    {
-          index: number,
-          picture: string - url link to picture,
-          name: string - first and last name separated by a space,
-          company: string,
-          status: string - can either be Consulting, Live, Data,
-          email: string,
-          telephone: string,
-          bio: string,
-          hobbies: string[] - an array of strings since it renders list items
-          tags: string[] - an array of tags,
-          missions: object[
-            {
-              title: string,
-              date: body,
-              body: string[] - also renders a list so it should be an array
-            }
-          ]
-      }
-    ]
+It uses webpack for bundling JavaScript and proccessing SCSS into CSS
+
+JavaScript and CSS are output into the `./assets` folder
+
+All files for development are in the `./src` folder
+
+All documentation is in the `./docs` folder.
+
+To understand how the data for the blocks is rendered please see the `data` section under the `Globals` side menu.
+
+To start development, run the command `npm run dev` on the command. This will start compiling JS and CSS from `./src` into `./assets`. It updates on change.
+
+To make a production build run `npm run build`

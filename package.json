@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --watch",
     "build": "webpack --mode production",
-    "doc": "jsdoc -c jsdoc.config.json"
+    "doc": "jsdoc -c jsdoc.config.json README.md"
   },
   "author": "",
   "license": "ISC",
